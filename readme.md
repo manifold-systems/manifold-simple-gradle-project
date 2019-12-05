@@ -26,6 +26,9 @@ gradlew build
 
 ### Cloning the project using **IntelliJ IDEA**
 
+>**Note** you should install the Manifold plugin before you get started with this project.
+>You can install the plugin directly from within IntelliJ: `Settings | Plugins | Browse Repositories | Manifold`
+
 Follow these steps to automatically clone and open the project from IntelliJ IDEA.
 
 If you already have a project IntelliJ open, you can clone this project using the menu command:
