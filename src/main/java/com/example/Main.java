@@ -4,6 +4,7 @@ import data.Person;
 import data.User;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static data.User.Gender.male;
 
@@ -20,5 +21,8 @@ public class Main {
       .build();
     System.out.println(user.getName());
     System.out.println(user.getDate_of_birth().getYear());
+
+    ArrayList<String> list = new ArrayList<>();
+    list.myArrayListMethod();
   }
 }

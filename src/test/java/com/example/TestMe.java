@@ -5,11 +5,19 @@ import data.User;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static data.User.Gender.male;
 import static org.junit.Assert.assertEquals;
 
 public class TestMe {
+  @Test
+  public void simpleExtensionTest()
+  {
+    ArrayList<String> list = new ArrayList<>();
+    list.myArrayListMethod();
+  }
+
   @Test
   public void simplePersonTest() {
     Person person = Person.fromSource();
