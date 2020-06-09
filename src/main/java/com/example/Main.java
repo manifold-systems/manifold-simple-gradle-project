@@ -15,7 +15,7 @@ public class Main {
     System.out.println(person.getName());
 
     // simple JSON schema file
-    var user = User.builder("Bob","bob@email.com")
+    var user = User.builder("Bob", "bob@email.com")
       .withGender(male)
       .withDate_of_birth(LocalDate.of(1978, 8, 18))
       .build();

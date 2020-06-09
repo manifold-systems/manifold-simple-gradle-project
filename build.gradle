@@ -9,21 +9,24 @@ targetCompatibility = 11
 sourceCompatibility = 11
 
 repositories {
+    mavenLocal()
     jcenter()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
-dependencies {
-    implementation group: 'systems.manifold', name: 'manifold-all', version: '2020.1.12'
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+configurations {
+    // give tests access to compileOnly dependencies
+    testImplementation.extendsFrom compileOnly
+}
 
-    if (JavaVersion.current() == JavaVersion.VERSION_1_8) {
-        // tools.jar dependency (for Java 8 only), primarily to support structural typing without static proxies.
-        // Thus if you are *not* using structural typing, you **don't** need tools.jar
-        compile files( "${System.properties['java.home']}/../lib/tools.jar" )
-    }
+dependencies {
+    compileOnly 'systems.manifold:manifold-json:2020.1.13'
+    implementation 'systems.manifold:manifold-json-rt:2020.1.13'
+
+    testImplementation 'junit:junit:4.12'
+
     // Add manifold to -processorpath for javac
-    annotationProcessor group: 'systems.manifold', name: 'manifold-all', version: '2020.1.12'
+    annotationProcessor 'systems.manifold:manifold-json:2020.1.13'
 }
 
 if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
@@ -37,13 +40,4 @@ if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
         // If you DO NOT define a module-info.java file:
         options.compilerArgs += ['-Xplugin:Manifold']
     }
-}
-
-tasks.compileJava {
-    classpath += files(sourceSets.main.output.resourcesDir) //adds build/resources/main to javac's classpath
-    dependsOn processResources
-}
-tasks.compileTestJava {
-    classpath += files(sourceSets.test.output.resourcesDir) //adds build/resources/test to test javac's classpath
-    dependsOn processTestResources
 }
