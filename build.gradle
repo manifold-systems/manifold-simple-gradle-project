@@ -20,13 +20,13 @@ configurations {
 }
 
 dependencies {
-    compileOnly 'systems.manifold:manifold-json:2020.1.20'
-    implementation 'systems.manifold:manifold-json-rt:2020.1.20'
+    compileOnly 'systems.manifold:manifold-json:2020.1.22'
+    implementation 'systems.manifold:manifold-json-rt:2020.1.22'
 
     testImplementation 'junit:junit:4.12'
 
     // Add manifold to -processorpath for javac
-    annotationProcessor 'systems.manifold:manifold-json:2020.1.20'
+    annotationProcessor 'systems.manifold:manifold-json:2020.1.22'
 }
 
 if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
