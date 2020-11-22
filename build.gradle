@@ -20,9 +20,9 @@ configurations {
 }
 
 dependencies {
-    implementation 'systems.manifold:manifold-json-rt:2020.1.35'
+    implementation 'systems.manifold:manifold-json-rt:2020.1.38'
     testImplementation 'junit:junit:4.12'
-    annotationProcessor 'systems.manifold:manifold-json:2020.1.35'
+    annotationProcessor 'systems.manifold:manifold-json:2020.1.38'
 }
 
 if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
