@@ -16,7 +16,7 @@ so make sure your environment is setup with a Java 11 JDK e.g., on Windows:
 ```
 >set java_home=\path\to\your\jdk-11
 ```                                                       
->**Note** Manifold fully supports Java 8 - 11. You can change the Java version in the `build.gradle` file to your
+>**Note** Manifold fully supports Java 8 - 16. You can change the Java version in the `build.gradle` file to your
 >preferred version.  
                                                
 To build run:
