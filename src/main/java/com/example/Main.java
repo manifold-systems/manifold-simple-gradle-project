@@ -3,6 +3,7 @@ package com.example;
 import data.Person;
 import data.User;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -24,5 +25,9 @@ public class Main {
 
     ArrayList<String> list = new ArrayList<>();
     list.myArrayListMethod();
+
+    LocalDate ld = LocalDate.now();
+    DayOfWeek dayOfWeek = ld.dayOfWeek;
+    System.out.println(dayOfWeek.value);
   }
 }
