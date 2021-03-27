@@ -21,7 +21,7 @@ public class TestMe {
   @Test
   public void simplePersonTest() {
     Person person = Person.fromSource();
-    assertEquals("Scott", person.getName());
+    assertEquals("Scott", person.name);
   }
 
   @Test
@@ -30,7 +30,7 @@ public class TestMe {
       .withGender(male)
       .withDate_of_birth(LocalDate.of(1978, 8, 18))
       .build();
-    assertEquals("Bob", user.getName());
-    assertEquals(1978, user.getDate_of_birth().getYear());
+    assertEquals("Bob", user.name);
+    assertEquals(1978, user.date_of_birth.year);
   }
 }
