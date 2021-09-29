@@ -24,9 +24,9 @@ manifold {
 }
 
 dependencies {
-    implementation 'systems.manifold:manifold-json-rt:2021.1.15'
-    implementation 'systems.manifold:manifold-props-rt:2021.1.15'
+    implementation "systems.manifold:manifold-json-rt:${manifold.manifoldVersion.get()}"
+    implementation "systems.manifold:manifold-props-rt:${manifold.manifoldVersion.get()}"
     testImplementation 'junit:junit:4.12'
-    annotationProcessor 'systems.manifold:manifold-json:2021.1.15'
-    annotationProcessor 'systems.manifold:manifold-props:2021.1.15'
+    annotationProcessor "systems.manifold:manifold-json:${manifold.manifoldVersion.get()}"
+    annotationProcessor "systems.manifold:manifold-props:${manifold.manifoldVersion.get()}"
 }
