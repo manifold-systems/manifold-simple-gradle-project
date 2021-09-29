@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'systems.manifold.manifold-gradle-plugin' version '0.0.2-alpha'
 }
 
 group 'systems.manifold'
@@ -10,13 +10,17 @@ sourceCompatibility = 11
 
 repositories {
     mavenLocal()
-    jcenter()
+    mavenCentral()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
 configurations {
     // give tests access to annotationProcessor dependencies
     testImplementation.extendsFrom annotationProcessor
+}
+
+manifold {
+    manifoldVersion = '2021.1.18'
 }
 
 dependencies {
@@ -37,11 +41,5 @@ if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
     tasks.withType(JavaCompile) {
         // If you DO NOT define a module-info.java file:
         options.compilerArgs += ['-Xplugin:Manifold']
-        doFirst {
-            logger.lifecycle 'Invoking javac with arguments: {}', options.compilerArgs
-            logger.lifecycle 'Invoking javac with annotationProcessorPath: {}', options.annotationProcessorPath.files*.name         
-            logger.lifecycle 'Invoking javac with compileClasspath: {}', classpath.files*.name
-            logger.lifecycle 'Invoking javac with source: {}', source*.name      
-        }
     }
 }
