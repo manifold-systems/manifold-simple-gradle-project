@@ -20,11 +20,11 @@ configurations {
 }
 
 dependencies {
-    implementation 'systems.manifold:manifold-json-rt:2021.1.26'
-    implementation 'systems.manifold:manifold-props-rt:2021.1.26'
+    implementation 'systems.manifold:manifold-json-rt:2021.1.27'
+    implementation 'systems.manifold:manifold-props-rt:2021.1.27'
     testImplementation 'junit:junit:4.13.2'
-    annotationProcessor 'systems.manifold:manifold-json:2021.1.26'
-    annotationProcessor 'systems.manifold:manifold-props:2021.1.26'
+    annotationProcessor 'systems.manifold:manifold-json:2021.1.27'
+    annotationProcessor 'systems.manifold:manifold-props:2021.1.27'
 }
 
 if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
