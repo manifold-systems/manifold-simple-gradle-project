@@ -20,7 +20,7 @@ configurations {
 }
 
 manifold {
-    manifoldVersion = '2022.1.18'
+    manifoldVersion = '2022.1.23'
 }
 
 dependencies {
@@ -30,3 +30,8 @@ dependencies {
     annotationProcessor "systems.manifold:manifold-json:${manifold.manifoldVersion.get()}"
     annotationProcessor "systems.manifold:manifold-props:${manifold.manifoldVersion.get()}"
 }
+
+//tasks.withType(JavaCompile) {
+//    options.fork = true
+//    options.forkOptions.executable = System.properties['java.home'] + '/bin/javac'
+//}
