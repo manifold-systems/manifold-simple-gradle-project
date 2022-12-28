@@ -20,7 +20,7 @@ configurations {
 }
 
 manifold {
-    manifoldVersion = '2022.1.29'
+    manifoldVersion = '2022.1.33'
 }
 
 dependencies {
